@@ -38,7 +38,10 @@ function FooterLinkList({
 }) {
     const items = links.map((link) => {
         return (
-            <li className="text-center md:text-left md:block first:block first:text-2xl first:font-semibold first:mb-2 first:font-serif font-light text-md hidden">
+            <li
+                key={link.url}
+                className="text-center md:text-left md:block first:block first:text-2xl first:font-semibold first:mb-2 first:font-serif font-light text-md hidden"
+            >
                 <a className="py-1 block hover:text-white/80 transition" href={link.url} key={link.url}>
                     {link.name}
                 </a>
@@ -52,7 +55,13 @@ function SocialIcons({ urls }: { urls: string[] }) {
     return (
         <div className="flex gap-x-3">
             {urls.map((url) => (
-                <SocialIcon style={{ height: 50, width: 50 }} fgColor="white" bgColor="transparent" url={url} />
+                <SocialIcon
+                    key={url}
+                    style={{ height: 50, width: 50 }}
+                    fgColor="white"
+                    bgColor="transparent"
+                    url={url}
+                />
             ))}
         </div>
     );

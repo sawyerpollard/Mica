@@ -1,7 +1,7 @@
 import { NavbarLink } from '../../lib/NavbarLinks';
 
 export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
-    const items = navbarLinks.map((navbarLink) => <NavLink navbarLink={navbarLink} />);
+    const items = navbarLinks.map((navbarLink) => <NavLink key={navbarLink.url} navbarLink={navbarLink} />);
     return (
         <nav className="flex overflow-x-scroll justify-center border-t-2 border-b-4 w-full border-black whitespace-nowrap">
             {items}
@@ -11,7 +11,7 @@ export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
 
 function NavLink({ navbarLink }: { navbarLink: NavbarLink }) {
     const subItems = navbarLink.subLinks?.map((subLink) => (
-        <li className="first:border-t-4 first:border-black border-t border-black/60">
+        <li key={subLink.url} className="first:border-t-4 first:border-black border-t border-black/60">
             <a
                 className="block p-6 tracking-wider transition font-medium whitespace-nowrap hover:text-purple-900 text-xl"
                 href={subLink.url}
