@@ -1,12 +1,14 @@
 import { Author } from '@tryghost/content-api';
 
 export default function AuthorLink({ authors }: { authors: Author[] }) {
-    const authorLinks = authors.map((author, index) => <a key={index} href={author.url || '#'} className='text-purple-900 hover:text-black'>{author.name}</a>);
+    const authorLinks = authors.map((author, index) => (
+        <a key={index} href={author.url || '#'} className="text-purple-900 hover:text-black">
+            {author.name}
+        </a>
+    ));
 
     return (
-        <div className='font-sans uppercase font-semibold text-xs mt-4'>
-            {['By ', ...naturalListJoin(authorLinks)]}
-        </div>
+        <div className="font-sans uppercase font-semibold text-xs mt-4">{['By ', ...naturalListJoin(authorLinks)]}</div>
     );
 }
 
@@ -25,7 +27,7 @@ function naturalListJoin(array: any[]) {
         array.forEach((item, index) => {
             list.push(item);
             if (index !== array.length - 1) {
-                list.push((index === array.length - 2) ? finalSeperator : seperator);
+                list.push(index === array.length - 2 ? finalSeperator : seperator);
             }
         });
     }

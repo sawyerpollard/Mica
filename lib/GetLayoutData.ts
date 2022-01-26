@@ -4,10 +4,26 @@ import { OneTwoOneData } from '../components/layout/OneTwoOneArticleLayout';
 import { TwoOneData } from '../components/layout/TwoOneArticleLayout';
 import { ArticleGridData } from '../components/layout/ArticleGridLayout';
 
-export async function getOneTwoOneData(leftTag: string, featuredTag: string, rightTag: string): Promise<OneTwoOneData | undefined> {
-    const leftArticles = await getGhostPosts({ limit: 4, filter: `tag:${leftTag}+tag:-${featuredTag}`, include: 'authors' });
-    const featuredArticles = await getGhostPosts({ limit: 1, filter: `tag:${featuredTag}+feature_image:-null`, include: 'authors' })
-    const rightArticles = await getGhostPosts({ limit: 2, filter: `tag:${rightTag}+tag:-${featuredTag}+feature_image:-null`, include: 'authors' });
+export async function getOneTwoOneData(
+    leftTag: string,
+    featuredTag: string,
+    rightTag: string
+): Promise<OneTwoOneData | undefined> {
+    const leftArticles = await getGhostPosts({
+        limit: 4,
+        filter: `tag:${leftTag}+tag:-${featuredTag}`,
+        include: 'authors',
+    });
+    const featuredArticles = await getGhostPosts({
+        limit: 1,
+        filter: `tag:${featuredTag}+feature_image:-null`,
+        include: 'authors',
+    });
+    const rightArticles = await getGhostPosts({
+        limit: 2,
+        filter: `tag:${rightTag}+tag:-${featuredTag}+feature_image:-null`,
+        include: 'authors',
+    });
 
     if (!leftArticles || !featuredArticles || !rightArticles) {
         return undefined;
@@ -16,12 +32,16 @@ export async function getOneTwoOneData(leftTag: string, featuredTag: string, rig
     return {
         leftArticles,
         featuredArticle: featuredArticles[0],
-        rightArticles
+        rightArticles,
     };
 }
 
 export async function getTwoOneData(leftTag: string, rightTag: string): Promise<TwoOneData | undefined> {
-    const leftArticles = await getGhostPosts({ limit: 3, filter: `tag:${leftTag}+feature_image:-null`, include: 'authors' });
+    const leftArticles = await getGhostPosts({
+        limit: 3,
+        filter: `tag:${leftTag}+feature_image:-null`,
+        include: 'authors',
+    });
     const leftHeading = (await getGhostTag({ slug: leftTag }))?.name;
 
     const rightArticles = await getGhostPosts({ limit: 6, filter: `tag:${rightTag}`, include: 'authors' });
@@ -35,7 +55,7 @@ export async function getTwoOneData(leftTag: string, rightTag: string): Promise<
         leftArticles,
         leftHeading,
         rightArticles,
-        rightHeading
+        rightHeading,
     };
 }
 
@@ -49,6 +69,6 @@ export async function getArticleGridData(tag: string, limit: number): Promise<Ar
 
     return {
         articles,
-        heading
+        heading,
     };
 }
