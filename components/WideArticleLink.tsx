@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { PostOrPage } from '@tryghost/content-api';
 
 import AuthorLink from './AuthorLink';
@@ -19,9 +17,7 @@ export default function WideArticleLink({
                 <p className='mt-4 font-serif text-lg hidden lg:block'>{article.excerpt}</p>
             </div>
             {showImage && article.feature_image && (
-                <div className='relative aspect-square h-40'>
-                    <Image layout='fill' objectFit='cover' src={article.feature_image} />
-                </div>
+                <img className='h-40 aspect-square object-cover' src={article.feature_image} />
             )}
         </a>
     );
