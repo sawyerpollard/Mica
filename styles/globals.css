@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'old-english-text-mt-regular';
+    src: url('/fonts/old-english-text-mt-regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -3,6 +3,7 @@ module.exports = {
     theme: {
         fontFamily: {
             serif: ['EB Garamond', 'serif'],
+            logo: ['old-english-text-mt-regular', 'serif'],
         },
         extend: {
             aspectRatio: {
