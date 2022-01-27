@@ -129,4 +129,22 @@ export default [
             },
         ],
     },
+    {
+        name: 'More',
+        url: process.env.GHOST_URL + '/',
+        subLinks: [
+            {
+                name: 'About',
+                url: process.env.GHOST_URL + '/about',
+            },
+            {
+                name: 'Contribute',
+                url: process.env.GHOST_URL + '/contribute',
+            },
+            {
+                name: 'Donate',
+                url: process.env.GHOST_URL + '/donate',
+            },
+        ],
+    },
 ];
