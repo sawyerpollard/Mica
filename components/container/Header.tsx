@@ -4,13 +4,17 @@ import Navbar from './Navbar';
 
 export default function Header() {
     return (
-        <header className="mb-6">
-            <div className="flex flex-col items-center my-4">
-                <h1 className="text-4xl md:text-8xl whitespace-nowrap font-logo">The Amherst Student</h1>
-                <p className="hidden font-medium md:inline">{todaysDate()}</p>
+        <>
+            <header>
+                <div className="flex flex-col items-center my-4">
+                    <h1 className="text-4xl md:text-8xl whitespace-nowrap font-logo">The Amherst Student</h1>
+                    <p className="hidden font-medium md:inline">{todaysDate()}</p>
+                </div>
+            </header>
+            <div className="sticky top-0 mb-6">
+                <Navbar navbarLinks={NavbarLinks} />
             </div>
-            <Navbar navbarLinks={NavbarLinks} />
-        </header>
+        </>
     );
 }
 

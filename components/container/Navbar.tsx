@@ -3,7 +3,7 @@ import { NavbarLink } from '../../lib/NavbarLinks';
 export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
     const items = navbarLinks.map((navbarLink) => <NavLink key={navbarLink.url} navbarLink={navbarLink} />);
     return (
-        <nav className="flex overflow-x-scroll justify-center border-t-2 border-b-4 w-full border-black whitespace-nowrap">
+        <nav className="flex justify-center border-t-2 border-b-4 w-full backdrop-blur-sm bg-white/90 border-black whitespace-nowrap">
             {items}
         </nav>
     );
