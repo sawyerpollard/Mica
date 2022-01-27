@@ -1,6 +1,7 @@
 import { SocialIcon } from 'react-social-icons';
 
 import CategoryLinks from '../../lib/FooterLinks';
+import DonateButton from '../DonateButton';
 
 const socialUrls = [
     'https://www.instagram.com/amherststudent',
@@ -12,10 +13,11 @@ export default function Footer() {
     return (
         <footer className="text-white bg-purple-900 px-16 py-4 mt-10 whitespace-nowrap">
             <section className="grid gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-                <div className="flex flex-col justify-center gap-y-2 items-center row-span-3">
+                <div className="flex flex-col justify-center gap-y-4 items-center row-span-3">
                     <p className="text-2xl font-logo">The Amherst Student</p>
                     <SocialIcons urls={socialUrls} />
-                    <p className="text-sm font-light">© {new Date().getFullYear()} The Amherst Student</p>
+
+                    <DonateButton url={process.env.GHOST_URL + '/donate'} />
                 </div>
                 <FooterLinkList links={CategoryLinks.news} />
                 <FooterLinkList links={CategoryLinks.opinion} />
@@ -24,6 +26,9 @@ export default function Footer() {
                 <FooterLinkList links={CategoryLinks.podcasts} />
                 <FooterLinkList links={CategoryLinks.amusements} />
             </section>
+            <p className="text-xs self-end font-medium mt-4 tracking-wide uppercase block text-center">
+                © {new Date().getFullYear()} The Amherst Student
+            </p>
         </footer>
     );
 }
