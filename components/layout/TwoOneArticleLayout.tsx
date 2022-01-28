@@ -15,11 +15,11 @@ export default function TwoOneArticleLayout({ leftArticles, leftHeading, rightAr
         <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16">
             <div className="lg:col-span-2">
                 {leftHeading && <h1 className="mb-8 font-serif font-medium text-5xl">{leftHeading}</h1>}
-                <WideArticleList articles={leftArticles} showImages={true} />
+                <WideArticleList articles={leftArticles} showImages showDate />
             </div>
             <div className="lg:col-span-1">
                 {rightHeading && <h1 className="mb-8 font-serif font-medium text-5xl">{rightHeading}</h1>}
-                <ArticleList articles={rightArticles} showImages={false} />
+                <ArticleList articles={rightArticles} showDate />
             </div>
         </div>
     );

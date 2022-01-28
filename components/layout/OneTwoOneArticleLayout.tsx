@@ -16,10 +16,10 @@ export default function OneTwoOneArticleLayout({ leftArticles, featuredArticle, 
                 <FeaturedArticle article={featuredArticle} />
             </div>
             <div className="lg:order-first">
-                <ArticleList articles={leftArticles} showImages={false} />
+                <ArticleList articles={leftArticles} showDate />
             </div>
             <div>
-                <ArticleList articles={rightArticles} showImages={true} />
+                <ArticleList articles={rightArticles} showImages showDate />
             </div>
         </div>
     );

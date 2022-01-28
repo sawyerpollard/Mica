@@ -1,6 +1,6 @@
 import { PostOrPage } from '@tryghost/content-api';
 
-import AuthorLink from './AuthorLink';
+import { ArticleInfo } from './ArticleInfo';
 
 export default function FeaturedArticle({ article }: { article: PostOrPage }) {
     return (
@@ -8,7 +8,7 @@ export default function FeaturedArticle({ article }: { article: PostOrPage }) {
             {article.feature_image && <img className="mb-4 aspect-3/2 object-cover" src={article.feature_image} />}
             <h2 className="font-serif text-3xl font-medium mb-4">{article.title}</h2>
             <p className="font-serif text-xl">{article.excerpt}</p>
-            {article.authors && <AuthorLink authors={article.authors} />}
+            <ArticleInfo article={article} showDate />
         </a>
     );
 }
