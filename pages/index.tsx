@@ -15,7 +15,7 @@ export default function Home(props: {
     artsGridData: ArticleGridData;
 }) {
     return (
-        <div className="mx-auto container px-6">
+        <div className="mx-auto container px-4">
             <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
