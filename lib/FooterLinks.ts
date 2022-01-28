@@ -5,16 +5,16 @@ export default {
             url: process.env.GHOST_URL + '/section/news',
         },
         {
-            name: 'Students',
-            url: process.env.GHOST_URL + '/section/student-news',
-        },
-        {
-            name: 'Administration',
-            url: process.env.GHOST_URL + '/section/administration',
-        },
-        {
             name: 'Covid-19',
             url: process.env.GHOST_URL + '/section/covid',
+        },
+        {
+            name: 'College',
+            url: process.env.GHOST_URL + '/section/college',
+        },
+        {
+            name: 'Town',
+            url: process.env.GHOST_URL + '/section/town',
         },
         {
             name: 'Police Log',
@@ -45,7 +45,7 @@ export default {
     ],
     artsAndLiving: [
         {
-            name: 'Arts and Living',
+            name: 'Arts & Living',
             url: process.env.GHOST_URL + '/section/arts-and-living',
         },
         {
@@ -59,10 +59,6 @@ export default {
         {
             name: 'Music',
             url: process.env.GHOST_URL + '/section/music',
-        },
-        {
-            name: 'Books',
-            url: process.env.GHOST_URL + '/section/books',
         },
         {
             name: 'Theater',
