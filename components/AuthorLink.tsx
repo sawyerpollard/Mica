@@ -8,7 +8,7 @@ export default function AuthorLink({ authors }: { authors: Author[] }) {
     ));
 
     return (
-        <div className="font-sans uppercase font-semibold text-xs mt-4">{['By ', ...naturalListJoin(authorLinks)]}</div>
+        <p className="font-sans uppercase font-semibold text-xs inline">{['By ', ...naturalListJoin(authorLinks)]}</p>
     );
 }
 
