@@ -11,7 +11,7 @@ const socialUrls = [
 
 export default function Footer() {
     return (
-        <footer className="text-white bg-purple-900 mt-10 whitespace-nowrap">
+        <footer className="text-white bg-mammoth-800 mt-10 whitespace-nowrap">
             <section className="grid gap-x-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                 <div className="flex flex-col justify-center gap-y-4 p-6 items-center row-span-3 overflow-hidden bg-black/20">
                     <p className="text-2xl font-logo">The Amherst Student</p>
@@ -24,6 +24,32 @@ export default function Footer() {
                     >
                         astudent@amherst.edu
                     </a>
+                    <div className="flex mt-8 gap-x-4 text-sm font-medium">
+                        <a
+                            className="block py-2 hover:text-white/80 transition"
+                            href={process.env.GHOST_URL + '/about'}
+                        >
+                            About
+                        </a>
+                        <a
+                            className="block py-2 hover:text-white/80 transition"
+                            href={process.env.GHOST_URL + '/masthead'}
+                        >
+                            Masthead
+                        </a>
+                        <a
+                            className="block py-2 hover:text-white/80 transition"
+                            href={process.env.GHOST_URL + '/subscribe'}
+                        >
+                            Subscribe
+                        </a>
+                        <a
+                            className="block py-2 hover:text-white/80 transition"
+                            href={process.env.GHOST_URL + '/contact'}
+                        >
+                            Contact
+                        </a>
+                    </div>
                 </div>
                 <FooterLinkList links={CategoryLinks.news} />
                 <FooterLinkList links={CategoryLinks.opinion} />
@@ -51,7 +77,7 @@ function FooterLinkList({
         return (
             <li
                 key={link.url}
-                className="text-center md:text-left md:block first:block first:text-2xl first:font-semibold first:mb-2 first:font-serif font-light text-md hidden"
+                className="text-center md:text-left md:block first:block first:text-2xl first:font-semibold first:mb-2 first:uppercase first:tracking-wide font-light text-md hidden"
             >
                 <a className="py-2 block hover:text-white/80 transition" href={link.url} key={link.url}>
                     {link.name}
