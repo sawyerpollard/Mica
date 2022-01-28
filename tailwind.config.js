@@ -9,6 +9,15 @@ module.exports = {
             aspectRatio: {
                 '3/2': '3 / 2',
             },
+            colors: {
+                mammoth: {
+                    500: '#b7a5d3',
+                    600: '#856cb0',
+                    700: '#5d3c85',
+                    800: '#3f1f69',
+                    900: '#311a4d',
+                },
+            },
         },
     },
     plugins: [],
