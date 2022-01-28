@@ -10,16 +10,16 @@ export default [
         url: process.env.GHOST_URL + '/section/news',
         subLinks: [
             {
-                name: 'Students',
-                url: process.env.GHOST_URL + '/section/student-news',
-            },
-            {
-                name: 'Administration',
-                url: process.env.GHOST_URL + '/section/administration',
-            },
-            {
                 name: 'Covid-19',
                 url: process.env.GHOST_URL + '/section/covid',
+            },
+            {
+                name: 'College',
+                url: process.env.GHOST_URL + '/section/college',
+            },
+            {
+                name: 'Town',
+                url: process.env.GHOST_URL + '/section/town',
             },
             {
                 name: 'Police Log',
@@ -50,7 +50,7 @@ export default [
         ],
     },
     {
-        name: 'Arts and Living',
+        name: 'Arts & Living',
         url: process.env.GHOST_URL + '/section/arts-and-living',
         subLinks: [
             {
@@ -64,10 +64,6 @@ export default [
             {
                 name: 'Music',
                 url: process.env.GHOST_URL + '/section/music',
-            },
-            {
-                name: 'Books',
-                url: process.env.GHOST_URL + '/section/books',
             },
             {
                 name: 'Theater',
@@ -98,12 +94,12 @@ export default [
         url: process.env.GHOST_URL + '/section/podcast',
         subLinks: [
             {
-                name: 'Tusk Talks',
-                url: process.env.GHOST_URL + '/section/tusk-talks',
-            },
-            {
                 name: 'The Student Sums It Up',
                 url: process.env.GHOST_URL + '/section/the-student-sums-it-up',
+            },
+            {
+                name: 'Tusk Talks',
+                url: process.env.GHOST_URL + '/section/tusk-talks',
             },
             {
                 name: 'Terras Irradient',
@@ -130,6 +126,10 @@ export default [
         ],
     },
     {
+        name: 'Subscribe',
+        url: process.env.GHOST_URL + '/',
+    },
+    {
         name: 'More',
         url: process.env.GHOST_URL + '/',
         subLinks: [
@@ -138,12 +138,16 @@ export default [
                 url: process.env.GHOST_URL + '/about',
             },
             {
-                name: 'Contribute',
+                name: 'Donate',
+                url: process.env.GHOST_URL + '/donate',
+            },
+            {
+                name: 'Join the Staff',
                 url: process.env.GHOST_URL + '/contribute',
             },
             {
-                name: 'Donate',
-                url: process.env.GHOST_URL + '/donate',
+                name: 'Contribute',
+                url: process.env.GHOST_URL + '/contribute',
             },
         ],
     },
