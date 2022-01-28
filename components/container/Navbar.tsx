@@ -13,7 +13,7 @@ function NavLink({ navbarLink }: { navbarLink: NavbarLink }) {
     const subItems = navbarLink.subLinks?.map((subLink) => (
         <li key={subLink.url} className="first:border-t-4 first:border-black border-t border-black/60">
             <a
-                className="block p-6 tracking-wider transition font-medium whitespace-nowrap hover:text-purple-900 text-xl"
+                className="block p-4 tracking-wider transition font-medium whitespace-nowrap hover:text-purple-900"
                 href={subLink.url}
             >
                 {subLink.name}
@@ -24,7 +24,7 @@ function NavLink({ navbarLink }: { navbarLink: NavbarLink }) {
     return (
         <div className="group inline-block">
             <a
-                className="block px-6 py-2 uppercase transition text-lg font-bold hover:text-purple-900"
+                className="block px-6 py-2 uppercase transition font-bold text-md hover:text-purple-900"
                 href={navbarLink.url}
             >
                 {navbarLink.name}
