@@ -11,7 +11,7 @@ export default function Topbar() {
     return (
         <section className="hidden md:flex justify-between items-center bg-gray-100 drop-shadow text-gray-500 text-light text-sm">
             <div>{items}</div>
-            <div className="px-2">
+            <div className="px-2 h-8">
                 <OpenWeatherInfo cityId={4929023} />
             </div>
         </section>
