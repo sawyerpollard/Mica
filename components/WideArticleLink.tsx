@@ -22,7 +22,7 @@ export default function WideArticleLink({
                 <p className="mt-4 font-serif text-lg hidden lg:block">{article.excerpt}</p>
             </div>
             {showImage && article.feature_image && (
-                <img className="h-40 aspect-square object-cover" src={article.feature_image} />
+                <img className="h-52 aspect-square object-cover" src={article.feature_image} />
             )}
         </a>
     );
