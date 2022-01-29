@@ -1,18 +1,20 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { getOneTwoOneData, getArticleGridData, getTwoOneData } from '../lib/GetLayoutData';
+import { getOneTwoOneData, getArticleGridData, getTwoOneData, getImageArticleData } from '../lib/GetLayoutData';
 
 import OneTwoOneArticleLayout, { OneTwoOneData } from '../components/layout/OneTwoOneArticleLayout';
 import TwoOneArticleLayout, { TwoOneData } from '../components/layout/TwoOneArticleLayout';
 import ArticleGridLayout, { ArticleGridData } from '../components/layout/ArticleGridLayout';
+import ImageArticleLayout, { ImageArticleData } from '../components/layout/ImageArticleLayout';
 import VerticalLayout from '../components/layout/VerticalLayout';
 
 export default function Home(props: {
     oneTwoOneData: OneTwoOneData;
     twoOneData: TwoOneData;
-    sportsGridData: ArticleGridData;
-    artsGridData: ArticleGridData;
+    crosswordGridData: ArticleGridData;
+    sportsImageArticleData: ImageArticleData;
+    artsImageArticleData: ImageArticleData;
 }) {
     return (
         <div className="mx-auto container px-4">
@@ -29,8 +31,9 @@ export default function Home(props: {
             <VerticalLayout>
                 <OneTwoOneArticleLayout {...props.oneTwoOneData} />
                 <TwoOneArticleLayout {...props.twoOneData} />
-                <ArticleGridLayout {...props.sportsGridData} />
-                <ArticleGridLayout {...props.artsGridData} />
+                <ImageArticleLayout {...props.artsImageArticleData} />
+                <ArticleGridLayout {...props.crosswordGridData} />
+                <ImageArticleLayout {...props.sportsImageArticleData} />
             </VerticalLayout>
         </div>
     );
@@ -41,11 +44,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const twoOneData = await getTwoOneData('news', 'opinion');
 
-    const sportsGridData = await getArticleGridData('sports', 8);
+    const sportsImageArticleData = await getImageArticleData('sports', 6);
 
-    const artsGridData = await getArticleGridData('arts-and-living', 8);
+    const artsImageArticleData = await getImageArticleData('arts-and-living', 3);
 
-    if (!oneTwoOneData || !twoOneData || !sportsGridData || !artsGridData) {
+    const crosswordGridData = await getArticleGridData('crossword', 4);
+
+    if (!oneTwoOneData || !twoOneData || !sportsImageArticleData || !crosswordGridData || !artsImageArticleData) {
         return {
             notFound: true,
         };
@@ -55,8 +60,9 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
             oneTwoOneData,
             twoOneData,
-            sportsGridData,
-            artsGridData,
+            crosswordGridData,
+            sportsImageArticleData,
+            artsImageArticleData,
         },
     };
 };
