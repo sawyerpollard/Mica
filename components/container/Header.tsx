@@ -15,7 +15,7 @@ export default function Header() {
                     <p className="hidden font-medium md:inline">{naturalDateString(new Date())}</p>
                 </div>
             </header>
-            <div className="sticky top-0 mb-6">
+            <div className="sticky z-50 top-0 mb-6">
                 <Navbar navbarLinks={NavbarLinks} />
             </div>
         </>
