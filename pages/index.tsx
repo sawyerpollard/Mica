@@ -8,6 +8,7 @@ import TwoOneArticleLayout, { TwoOneData } from '../components/layout/TwoOneArti
 import ArticleGridLayout, { ArticleGridData } from '../components/layout/ArticleGridLayout';
 import ImageArticleLayout, { ImageArticleData } from '../components/layout/ImageArticleLayout';
 import VerticalLayout from '../components/layout/VerticalLayout';
+import ShowcaseSquare from '../components/ShowcaseSquare';
 
 export default function Home(props: {
     oneTwoOneData: OneTwoOneData;
@@ -34,6 +35,18 @@ export default function Home(props: {
                 <ImageArticleLayout {...props.artsImageArticleData} />
                 <ArticleGridLayout {...props.crosswordGridData} />
                 <ImageArticleLayout {...props.sportsImageArticleData} />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <ShowcaseSquare
+                        heading="New podcasts out now!"
+                        buttonText="Listen Now"
+                        buttonUrl={process.env.GHOST_URL + '/section/podcast'}
+                    />
+                    <ShowcaseSquare
+                        heading="Play today's crossword!"
+                        buttonText="Solve Now"
+                        buttonUrl={process.env.GHOST_URL + '/section/crossword'}
+                    />
+                </div>
             </VerticalLayout>
         </div>
     );
