@@ -18,12 +18,12 @@ export default [
                 url: process.env.GHOST_URL + '/section/college',
             },
             {
-                name: 'Town',
-                url: process.env.GHOST_URL + '/section/town',
+                name: 'Features',
+                url: process.env.GHOST_URL + '/section/features',
             },
             {
-                name: 'Police Log',
-                url: process.env.GHOST_URL + '/section/police-log',
+                name: 'Town',
+                url: process.env.GHOST_URL + '/section/town',
             },
         ],
     },
@@ -44,21 +44,21 @@ export default [
                 url: process.env.GHOST_URL + '/section/op-ed',
             },
             {
-                name: 'Letters to the Editor',
+                name: 'Letters',
                 url: process.env.GHOST_URL + '/section/letters-to-the-editor',
             },
         ],
     },
     {
-        name: 'Arts & Living',
+        name: 'Art & Living',
         url: process.env.GHOST_URL + '/section/arts-and-living',
         subLinks: [
             {
-                name: 'Campus Life',
+                name: 'Campus',
                 url: process.env.GHOST_URL + '/section/campus-life',
             },
             {
-                name: 'Film and TV',
+                name: 'Film & TV',
                 url: process.env.GHOST_URL + '/section/film-and-tv',
             },
             {
@@ -126,28 +126,42 @@ export default [
         ],
     },
     {
-        name: 'Subscribe',
-        url: process.env.GHOST_URL + '/',
-    },
-    {
-        name: 'More',
-        url: process.env.GHOST_URL + '/',
+        name: 'Submit',
+        url: process.env.GHOST_URL + '/submit',
         subLinks: [
             {
-                name: 'About',
-                url: process.env.GHOST_URL + '/about',
+                name: 'Letters',
+                url: process.env.GHOST_URL + '/letters',
             },
             {
-                name: 'Donate',
-                url: process.env.GHOST_URL + '/donate',
+                name: 'Op-Ed',
+                url: process.env.GHOST_URL + '/op-eds',
             },
             {
-                name: 'Join the Staff',
-                url: process.env.GHOST_URL + '/contribute',
+                name: 'News Tips',
+                url: process.env.GHOST_URL + '/tips',
             },
             {
                 name: 'Contribute',
                 url: process.env.GHOST_URL + '/contribute',
+            },
+        ],
+    },
+    {
+        name: 'About',
+        url: process.env.GHOST_URL + '/about',
+        subLinks: [
+            {
+                name: 'Masthead',
+                url: process.env.GHOST_URL + '/masthead',
+            },
+            {
+                name: 'Join Our Staff',
+                url: process.env.GHOST_URL + '/join',
+            },
+            {
+                name: 'Contact',
+                url: process.env.GHOST_URL + '/contact',
             },
         ],
     },
