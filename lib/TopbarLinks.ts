@@ -28,19 +28,19 @@ export default {
     right: [
         {
             name: 'Feedback',
-            url: process.env.GHOST_URL + '/about',
+            url: process.env.GHOST_URL + '/feedback',
         },
         {
             name: 'Letters to the Editor',
-            url: process.env.GHOST_URL + '/advertise',
+            url: process.env.GHOST_URL + '/letters',
         },
         {
             name: 'News Tips',
-            url: process.env.GHOST_URL + '/contribute',
+            url: process.env.GHOST_URL + '/tips',
         },
         {
             name: 'Join Our Staff',
-            url: process.env.GHOST_URL + '/subscribe',
+            url: process.env.GHOST_URL + '/join',
         },
     ],
 };
