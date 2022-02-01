@@ -23,7 +23,7 @@ export function OpenWeatherInfo({ cityId }: { cityId: number }) {
         const iconUrl = getIconUrl(response.weather[0].icon);
         const temp = Math.round(response.main.temp);
         return (
-            <div className="flex items-center font-semibold">
+            <div className="flex items-center font-semibold whitespace-nowrap">
                 <p>{[temp, '°F']}</p>
                 <img className="object-cover object-center brightness-75 h-8" src={iconUrl} />
                 <p>Amherst, MA</p>
