@@ -50,7 +50,7 @@ export default [
         ],
     },
     {
-        name: 'Art & Living',
+        name: 'Arts & Living',
         url: process.env.GHOST_URL + '/section/arts-and-living',
         subLinks: [
             {
