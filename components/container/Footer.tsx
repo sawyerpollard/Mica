@@ -1,13 +1,9 @@
 import { SocialIcon } from 'react-social-icons';
 
 import CategoryLinks from '../../lib/FooterLinks';
-import DonateButton from '../DonateButton';
+import SocialLinks from '../../lib/SocialLinks';
 
-const socialUrls = [
-    'https://www.instagram.com/amherststudent',
-    'https://twitter.com/amherststudent',
-    'https://www.facebook.com/AmherstStudent/',
-];
+import DonateButton from '../DonateButton';
 
 export default function Footer() {
     return (
@@ -16,7 +12,7 @@ export default function Footer() {
                 <div className="flex flex-col justify-center gap-y-4 p-6 items-center row-span-3 overflow-hidden bg-black/20">
                     <p className="text-2xl font-logo">The Amherst Student</p>
                     <p className="font-serif">Established 1868</p>
-                    <SocialIcons urls={socialUrls} />
+                    <SocialIcons urls={SocialLinks} />
                     <DonateButton url={process.env.GHOST_URL + '/donate'} />
                     <a
                         className="font-serif font-light text-blue-300 hover:text-blue-300/80 transition"
@@ -24,7 +20,7 @@ export default function Footer() {
                     >
                         astudent@amherst.edu
                     </a>
-                    <div className="flex mt-8 gap-x-4 text-sm font-medium">
+                    <div className="flex flex-wrap justify-center mt-8 gap-x-4 text-sm font-medium">
                         <a
                             className="block py-2 hover:text-white/80 transition"
                             href={process.env.GHOST_URL + '/about'}
@@ -37,11 +33,20 @@ export default function Footer() {
                         >
                             Masthead
                         </a>
+                        <a className="block py-2 hover:text-white/80 transition" href={process.env.GHOST_URL + '/join'}>
+                            Join
+                        </a>
                         <a
                             className="block py-2 hover:text-white/80 transition"
                             href={process.env.GHOST_URL + '/subscribe'}
                         >
                             Subscribe
+                        </a>
+                        <a
+                            className="block py-2 hover:text-white/80 transition"
+                            href={process.env.GHOST_URL + '/advertise'}
+                        >
+                            Advertise
                         </a>
                         <a
                             className="block py-2 hover:text-white/80 transition"
