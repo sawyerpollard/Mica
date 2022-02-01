@@ -24,7 +24,7 @@ export default function Topbar() {
     ));
 
     return (
-        <section className="hidden md:flex justify-between items-center bg-white drop-shadow text-gray-400 text-light text-sm whitespace-nowrap">
+        <section className="hidden lg:flex justify-between items-center bg-white drop-shadow text-gray-400 text-light text-sm whitespace-nowrap">
             <div>{leftItems}</div>
             <div>{rightItems}</div>
         </section>

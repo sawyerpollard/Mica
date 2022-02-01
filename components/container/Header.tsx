@@ -13,8 +13,8 @@ export default function Header() {
         <>
             <header>
                 <Topbar />
-                <section className="flex justify-between items-start">
-                    <div>
+                <section className="flex justify-center">
+                    <div className="hidden lg:block absolute left-0">
                         <SocialIcons urls={SocialLinks} />
                     </div>
                     <div className="flex flex-col items-center my-5">
@@ -25,7 +25,7 @@ export default function Header() {
                             {naturalDateString(new Date())} • {issueString(151, 13)}
                         </p>
                     </div>
-                    <div className="px-3 py-0.5">
+                    <div className="px-3 py-0.5 hidden lg:block absolute right-0">
                         <OpenWeatherInfo cityId={4929023} />
                     </div>
                 </section>
