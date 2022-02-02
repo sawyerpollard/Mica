@@ -9,6 +9,7 @@ import ArticleGridLayout, { ArticleGridData } from '../components/layout/Article
 import ImageArticleLayout, { ImageArticleData } from '../components/layout/ImageArticleLayout';
 import VerticalLayout from '../components/layout/VerticalLayout';
 import ShowcaseSquare from '../components/ShowcaseSquare';
+import BannerAd from '../components/BannerAd';
 
 export default function Home(props: {
     oneTwoOneData: OneTwoOneData;
@@ -18,7 +19,7 @@ export default function Home(props: {
     artsImageArticleData: ImageArticleData;
 }) {
     return (
-        <div className="mx-auto container px-4">
+        <div className="mx-auto container px-4 overflow-">
             <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -33,6 +34,11 @@ export default function Home(props: {
                 <OneTwoOneArticleLayout {...props.oneTwoOneData} />
                 <TwoOneArticleLayout {...props.twoOneData} />
                 <ImageArticleLayout {...props.artsImageArticleData} />
+                <BannerAd
+                    heading="Your ad here!"
+                    description="Click to learn about advertisng with The Amherst student."
+                    url={process.env.GHOST_URL + '/advertising'}
+                />
                 <ArticleGridLayout {...props.crosswordGridData} />
                 <ImageArticleLayout {...props.sportsImageArticleData} />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
