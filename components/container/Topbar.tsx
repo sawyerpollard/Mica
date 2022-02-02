@@ -1,5 +1,3 @@
-import { OpenWeatherInfo } from '../OpenWeatherInfo';
-
 import TopbarLinks from '../../lib/TopbarLinks';
 
 export default function Topbar() {
