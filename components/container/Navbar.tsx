@@ -24,13 +24,13 @@ function NavLink({ navbarLink }: { navbarLink: NavbarLink }) {
     return (
         <div className="group inline-block">
             <a
-                className="block px-6 py-2 uppercase transition font-bold text-md hover:text-purple-900"
+                className="block px-2 lg:px-6 py-2 uppercase transition font-bold text-md hover:text-purple-900"
                 href={navbarLink.url}
             >
                 {navbarLink.name}
             </a>
             {subItems && (
-                <ul className="drop-shadow-lg backdrop-blur-sm rounded-bl rounded-br bg-white/90 w-80 absolute hidden group-hover:block">
+                <ul className="drop-shadow-lg backdrop-blur-sm rounded-bl rounded-br w-60 bg-white/90 absolute hidden group-hover:block">
                     {subItems}
                 </ul>
             )}

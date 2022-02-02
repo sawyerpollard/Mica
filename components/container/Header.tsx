@@ -7,18 +7,19 @@ import { SocialIcon } from 'react-social-icons';
 
 import Navbar from './Navbar';
 import Topbar from './Topbar';
+import NavMenu from './NavMenu';
 
 export default function Header() {
     return (
         <>
-            <header>
+            <header className="bg-white/90 backdrop-blur-sm sticky top-0 md:top-auto md:block z-40 shadow-md mb-4 md:mb-0">
                 <Topbar />
-                <section className="flex justify-center">
+                <section className="flex sm:justify-center">
                     <div className="hidden lg:block absolute left-0">
                         <SocialIcons urls={SocialLinks} />
                     </div>
                     <div className="flex flex-col items-center my-5">
-                        <h1 className="text-4xl md:text-7xl lg:text-8xl whitespace-nowrap font-logo">
+                        <h1 className="text-3xl px-4 md:text-7xl lg:text-8xl whitespace-nowrap font-logo">
                             The Amherst Student
                         </h1>
                         <p className="hidden font-light italic md:inline">
@@ -30,9 +31,10 @@ export default function Header() {
                     </div>
                 </section>
             </header>
-            <div className="sticky z-50 top-0 mb-6">
+            <div className="hidden md:block sticky z-50 top-0 mb-6">
                 <Navbar navbarLinks={NavbarLinks} />
             </div>
+            <NavMenu navbarLinks={NavbarLinks} />
         </>
     );
 }
