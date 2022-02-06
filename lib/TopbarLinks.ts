@@ -32,15 +32,15 @@ export default {
         },
         {
             name: 'Letters to the Editor',
-            url: process.env.GHOST_URL + '/letters',
+            url: process.env.GHOST_URL + '/submit-a-letter',
         },
         {
             name: 'News Tips',
-            url: process.env.GHOST_URL + '/tips',
+            url: process.env.GHOST_URL + '/submit-a-tip',
         },
         {
             name: 'Join Our Staff',
-            url: process.env.GHOST_URL + '/join',
+            url: process.env.GHOST_URL + '/join-our-staff',
         },
     ],
 };

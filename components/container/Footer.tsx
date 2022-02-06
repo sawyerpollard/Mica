@@ -33,7 +33,7 @@ export default function Footer() {
                         >
                             Masthead
                         </a>
-                        <a className="block py-2 hover:text-white/80 transition" href={process.env.GHOST_URL + '/join'}>
+                        <a className="block py-2 hover:text-white/80 transition" href={process.env.GHOST_URL + '/join-our-staff'}>
                             Join
                         </a>
                         <a

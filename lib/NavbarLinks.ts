@@ -44,7 +44,7 @@ export default [
                 url: process.env.GHOST_URL + '/section/op-ed',
             },
             {
-                name: 'Letters',
+                name: 'Letters to the Editor',
                 url: process.env.GHOST_URL + '/section/letters-to-the-editor',
             },
         ],
@@ -127,23 +127,23 @@ export default [
     },
     {
         name: 'Submit',
-        url: process.env.GHOST_URL + '/submit',
+        url: '#',
         subLinks: [
             {
-                name: 'Letters',
-                url: process.env.GHOST_URL + '/letters',
+                name: 'Letter to the Editor',
+                url: process.env.GHOST_URL + '/submit-a-letter',
+            },
+            {
+                name: 'News Tip',
+                url: process.env.GHOST_URL + '/submit-a-tip',
             },
             {
                 name: 'Op-Ed',
-                url: process.env.GHOST_URL + '/op-eds',
+                url: process.env.GHOST_URL + '/submit-an-op-ed',
             },
             {
-                name: 'News Tips',
-                url: process.env.GHOST_URL + '/tips',
-            },
-            {
-                name: 'Contribute',
-                url: process.env.GHOST_URL + '/contribute',
+                name: 'Art or Essay',
+                url: process.env.GHOST_URL + '/submit-art-or-essay',
             },
         ],
     },
@@ -157,7 +157,7 @@ export default [
             },
             {
                 name: 'Join Our Staff',
-                url: process.env.GHOST_URL + '/join',
+                url: process.env.GHOST_URL + '/join-our-staff',
             },
             {
                 name: 'Contact',

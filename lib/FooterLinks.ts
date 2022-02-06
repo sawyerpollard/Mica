@@ -13,12 +13,12 @@ export default {
             url: process.env.GHOST_URL + '/section/college',
         },
         {
-            name: 'Town',
-            url: process.env.GHOST_URL + '/section/town',
+            name: 'Features',
+            url: process.env.GHOST_URL + '/section/features',
         },
         {
-            name: 'Police Log',
-            url: process.env.GHOST_URL + '/section/police-log',
+            name: 'Town',
+            url: process.env.GHOST_URL + '/section/town',
         },
     ],
     opinion: [
@@ -53,7 +53,7 @@ export default {
             url: process.env.GHOST_URL + '/section/campus-life',
         },
         {
-            name: 'Film and TV',
+            name: 'Film & TV',
             url: process.env.GHOST_URL + '/section/film-and-tv',
         },
         {
@@ -89,12 +89,12 @@ export default {
             url: process.env.GHOST_URL + '/section/podcast',
         },
         {
-            name: 'Tusk Talks',
-            url: process.env.GHOST_URL + '/section/tusk-talks',
-        },
-        {
             name: 'The Student Sums It Up',
             url: process.env.GHOST_URL + '/section/the-student-sums-it-up',
+        },
+        {
+            name: 'Tusk Talks',
+            url: process.env.GHOST_URL + '/section/tusk-talks',
         },
         {
             name: 'Terras Irradient',
