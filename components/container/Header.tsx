@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import NavbarLinks from '../../lib/NavbarLinks';
 import SocialLinks from '../../lib/SocialLinks';
 
@@ -19,9 +21,11 @@ export default function Header() {
                         <SocialIcons urls={SocialLinks} />
                     </div>
                     <div className="flex flex-col items-center my-5">
-                        <h1 className="text-3xl px-4 md:text-7xl lg:text-8xl whitespace-nowrap font-logo">
-                            The Amherst Student
-                        </h1>
+                            <a href={process.env.GHOST_URL}>
+                                <h1 className="text-3xl px-4 md:text-7xl lg:text-8xl whitespace-nowrap font-logo">
+                                    The Amherst Student
+                                </h1>
+                            </a>
                         <p className="hidden font-light italic md:inline">
                             {naturalDateString(new Date())} • {issueString(151, 13)}
                         </p>
