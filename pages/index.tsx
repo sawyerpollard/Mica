@@ -28,6 +28,19 @@ export default function Home(props: {
                     rel="stylesheet"
                 />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                
+                <meta property="og:site_name" content="The Amherst Student" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="The Amherst Student" />
+                <meta property="og:description" content="Founded in 1868, the Student remains the source for all news Amherst." />
+                <meta property="og:url" content="https://amherststudent.com/" />
+
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="The Amherst Student" />
+                <meta name="twitter:description" content="Founded in 1868, the Student remains the source for all news Amherst." />
+                <meta name="twitter:url" content="https://amherststudent.com/" />
+
+                <meta name="description" content="Founded in 1868, the Student remains the source for all news Amherst." />
                 <title>The Amherst Student</title>
             </Head>
             <VerticalLayout>
