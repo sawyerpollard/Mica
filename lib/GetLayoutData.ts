@@ -40,7 +40,7 @@ export async function getOneTwoOneData(
 export async function getTwoOneData(leftTag: string, rightTag: string): Promise<TwoOneData | undefined> {
     const leftArticles = await getGhostPosts({
         limit: 2,
-        filter: `tag:${leftTag}+feature_image:-null`,
+        filter: `tag:${leftTag}+feature_image:-null+tag:-hash-top-left+tag:-hash-top-right+tag:-hash-top-center`,
         include: 'authors',
     });
     const leftHeading = (await getGhostTag({ slug: leftTag }))?.name;
@@ -61,7 +61,7 @@ export async function getTwoOneData(leftTag: string, rightTag: string): Promise<
 }
 
 export async function getArticleGridData(tag: string, limit: number): Promise<ArticleGridData | undefined> {
-    const articles = await getGhostPosts({ limit, filter: `tag:${tag}`, include: 'authors' });
+    const articles = await getGhostPosts({ limit, filter: `tag:${tag}+tag:-hash-top-left+tag:-hash-top-right+tag:-hash-top-center`, include: 'authors' });
     const heading = (await getGhostTag({ slug: tag }))?.name;
 
     if (!articles || !heading) {
@@ -75,7 +75,7 @@ export async function getArticleGridData(tag: string, limit: number): Promise<Ar
 }
 
 export async function getImageArticleData(tag: string, limit: number): Promise<ImageArticleData | undefined> {
-    const articles = await getGhostPosts({ limit, filter: `tag:${tag}+feature_image:-null`, include: 'authors' });
+    const articles = await getGhostPosts({ limit, filter: `tag:${tag}+feature_image:-null+tag:-hash-top-left+tag:-hash-top-right+tag:-hash-top-center`, include: 'authors' });
     const heading = (await getGhostTag({ slug: tag }))?.name;
 
     if (!articles || !heading) {
