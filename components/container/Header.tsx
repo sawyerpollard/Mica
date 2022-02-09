@@ -27,7 +27,7 @@ export default function Header() {
                                 </h1>
                             </a>
                         <p className="hidden font-light italic md:inline">
-                            {naturalDateString(new Date())} • {issueString(151, 13)}
+                            {naturalDateString(new Date())} • {issueString(151, 15)}
                         </p>
                     </div>
                     <div className="px-3 py-0.5 hidden lg:block absolute right-0">
