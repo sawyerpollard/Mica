@@ -72,7 +72,7 @@ export default function Home(props: {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const oneTwoOneData = await getOneTwoOneData('news', 'hash-featured', 'opinion');
+    const oneTwoOneData = await getOneTwoOneData('hash-top-left', 'hash-featured', 'hash-top-right');
 
     const twoOneData = await getTwoOneData('news', 'opinion');
 
