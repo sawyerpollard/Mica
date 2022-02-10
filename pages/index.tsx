@@ -49,7 +49,7 @@ export default function Home(props: {
                 <ImageArticleLayout {...props.artsImageArticleData} />
                 <BannerAd
                     heading="Your ad here!"
-                    description="Click to learn about advertisng with The Amherst student."
+                    description="Click to learn about advertising with The Amherst Student."
                     url={process.env.GHOST_URL + '/advertise'}
                 />
                 <ArticleGridLayout {...props.crosswordGridData} />
