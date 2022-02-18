@@ -4,6 +4,7 @@ module.exports = {
         fontFamily: {
             serif: ['EB Garamond', 'serif'],
             logo: ['old-english-text-mt-regular', 'serif'],
+            sans: ['Karla', 'sans']
         },
         extend: {
             aspectRatio: {
@@ -17,6 +18,7 @@ module.exports = {
                     800: '#3f1f69',
                     900: '#311a4d',
                 },
+                primary: '3F1F69'
             },
         },
     },
