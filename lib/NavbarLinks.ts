@@ -126,21 +126,7 @@ export default [
         ],
     },
     {
-        name: 'About',
-        url: process.env.GHOST_URL + '/about',
-        subLinks: [
-            {
-                name: 'Masthead',
-                url: process.env.GHOST_URL + '/masthead',
-            },
-            {
-                name: 'Join Our Staff',
-                url: process.env.GHOST_URL + '/join-our-staff',
-            },
-            {
-                name: 'Contact',
-                url: process.env.GHOST_URL + '/contact',
-            },
-        ],
+        name: 'Search',
+        url: process.env.GHOST_URL + '/search',
     },
 ];
