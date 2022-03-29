@@ -1,9 +1,11 @@
 import { SocialIcon } from 'react-social-icons';
 
+import InfoLinkBox from '../InfoLinkBox';
+import DonateButton from '../DonateButton';
+
 import CategoryLinks from '../../lib/FooterLinks';
 import SocialLinks from '../../lib/SocialLinks';
-
-import DonateButton from '../DonateButton';
+import InfoLinks from '../../lib/InfoLinks';
 
 export default function Footer() {
     return (
@@ -15,46 +17,12 @@ export default function Footer() {
                     <SocialIcons urls={SocialLinks} />
                     <DonateButton url={process.env.GHOST_URL + '/donate'} />
                     <a
-                        className="font-serif font-light text-blue-300 hover:text-blue-300/80 transition"
+                        className="mb-8 font-serif font-light text-blue-300 hover:text-blue-300/80 transition"
                         href="mailto:astudent@amherst.edu"
                     >
                         astudent@amherst.edu
                     </a>
-                    <div className="flex flex-wrap justify-center mt-8 gap-x-4 text-sm font-medium">
-                        <a
-                            className="block py-2 hover:text-white/80 transition"
-                            href={process.env.GHOST_URL + '/about'}
-                        >
-                            About
-                        </a>
-                        <a
-                            className="block py-2 hover:text-white/80 transition"
-                            href={process.env.GHOST_URL + '/masthead'}
-                        >
-                            Masthead
-                        </a>
-                        <a className="block py-2 hover:text-white/80 transition" href={process.env.GHOST_URL + '/join-our-staff'}>
-                            Join
-                        </a>
-                        <a
-                            className="block py-2 hover:text-white/80 transition"
-                            href={process.env.GHOST_URL + '/subscribe'}
-                        >
-                            Subscribe
-                        </a>
-                        <a
-                            className="block py-2 hover:text-white/80 transition"
-                            href={process.env.GHOST_URL + '/advertise'}
-                        >
-                            Advertise
-                        </a>
-                        <a
-                            className="block py-2 hover:text-white/80 transition"
-                            href={process.env.GHOST_URL + '/contact'}
-                        >
-                            Contact
-                        </a>
-                    </div>
+                    <InfoLinkBox links={[...InfoLinks.primary, ...InfoLinks.secondary]} />
                 </div>
                 <FooterLinkList links={CategoryLinks.news} />
                 <FooterLinkList links={CategoryLinks.opinion} />

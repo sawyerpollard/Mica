@@ -1,5 +1,5 @@
 export default {
-    left: [
+    primary: [
         {
             name: 'About',
             url: process.env.GHOST_URL + '/about',
@@ -13,10 +13,6 @@ export default {
             url: process.env.GHOST_URL + '/subscribe',
         },
         {
-            name: 'Donate',
-            url: process.env.GHOST_URL + '/donate',
-        },
-        {
             name: 'Advertise',
             url: process.env.GHOST_URL + '/advertise',
         },
@@ -25,7 +21,7 @@ export default {
             url: process.env.GHOST_URL + '/contact',
         },
     ],
-    right: [
+    secondary: [
         {
             name: 'Feedback',
             url: process.env.GHOST_URL + '/feedback',

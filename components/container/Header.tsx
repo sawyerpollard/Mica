@@ -3,44 +3,37 @@ import NavbarLinks from '../../lib/NavbarLinks';
 import { OpenWeatherInfo } from '../OpenWeatherInfo';
 
 import Navbar from './Navbar';
-import Topbar from './Topbar';
-import NavMenu from './NavMenu';
 
 export default function Header() {
     return (
         <>
-            <Topbar />
-            <div className="hidden md:block sticky z-50 top-0">
+            <div className="sticky z-50 top-0">
                 <Navbar navbarLinks={NavbarLinks} />
             </div>
-            <header className="bg-white/90 text-mammoth-800 backdrop-blur-sm sticky top-0 md:top-auto md:block border-double border-b-4 border-mammoth-800 z-40 shadow-md mb-6 whitespace-nowrap">
+            <header className="bg-white/90 text-mammoth-800 backdrop-blur-sm sticky top-0 md:top-auto md:block md:border-b-4 border-mammoth-700 z-40 shadow-md mb-6 whitespace-nowrap">
                 <section className="flex md:justify-around">
                     <div className="hidden lg:flex items-center justify-center">
                         <p className="hidden uppercase font-bold md:inline">
                             {issueString(151, 15)}
                         </p>
                     </div>
-                    <div className="flex flex-col items-center my-6">
+                    <div className="hidden md:flex flex-col items-center my-6">
                         <a href={process.env.GHOST_URL}>
-                            <h1 className="text-3xl px-4 md:text-7xl whitespace-nowrap font-logo">
+                            <h1 className="text-3xl px-4 md:text-7xl xl:text-8xl whitespace-nowrap font-logo">
                                 The Amherst Student
                             </h1>
                         </a>
+                        <p className="hidden lg:inline font-serif font-medium italic">The Newspaper of Amherst College Since 1868</p>
                     </div>
-                    <div className="hidden lg:flex items-center justify-center">
+                    <div className="hidden lg:flex flex-col items-center justify-center font-medium">
+                    <OpenWeatherInfo cityId={4929023} />
+
                     <p className="hidden uppercase font-bold md:inline">
                         {naturalDateString(new Date())}
                     </p>
                     </div>
                 </section>
-                <div className="hidden md:block border-t-2 border-mammoth-800">
-                    <div className="container mx-auto flex justify-between items-center">
-                        <p className="font-serif font-medium italic">The Newspaper of Amherst College Since 1868</p>
-                        <OpenWeatherInfo cityId={4929023} />
-                    </div>
-                </div>
             </header>
-            <NavMenu navbarLinks={NavbarLinks} />
         </>
     );
 }

@@ -1,7 +1,7 @@
-export type NavbarLink = {
+export type MenuLink = {
     name: string;
     url: string;
-    subLinks?: NavbarLink[];
+    subLinks?: MenuLink[];
 };
 
 export default [
@@ -122,6 +122,28 @@ export default [
             {
                 name: 'Satire',
                 url: process.env.GHOST_URL + '/section/satire',
+            },
+        ],
+    },
+    {
+        name: 'Submit',
+        url: process.env.GHOST_URL + '/submit-a-tip',
+        subLinks: [
+            {
+                name: 'Letter to the Editor',
+                url: process.env.GHOST_URL + '/submit-a-letter',
+            },
+            {
+                name: 'News Tip',
+                url: process.env.GHOST_URL + '/submit-a-tip',
+            },
+            {
+                name: 'Op-Ed',
+                url: process.env.GHOST_URL + '/submit-an-op-ed',
+            },
+            {
+                name: 'Art or Essay',
+                url: process.env.GHOST_URL + '/submit-art-or-essay',
             },
         ],
     },
