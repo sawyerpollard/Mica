@@ -1,6 +1,6 @@
 export default function BannerAd({ heading, description, url }: { heading: string; description: string; url: string }) {
     return (
-        <div className="md:w-4/5 mx-auto">
+        <div className="md:w-4/5 mx-auto py-6">
             <a
                 href={url}
                 className="block overflow-hidden p-6 transition drop-shadow bg-gradient-to-t from-gray-700 to-gray-500 opacity-90 hover:opacity-100"

@@ -1,20 +1,20 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { getOneTwoOneData, getArticleGridData, getTwoOneData, getImageArticleData } from '../lib/GetLayoutData';
+import { getOneTwoOneData, getTwoOneData, getImageArticleData } from '../lib/GetLayoutData';
 
 import OneTwoOneArticleLayout, { OneTwoOneData } from '../components/layout/OneTwoOneArticleLayout';
 import TwoOneArticleLayout, { TwoOneData } from '../components/layout/TwoOneArticleLayout';
-import ArticleGridLayout, { ArticleGridData } from '../components/layout/ArticleGridLayout';
 import ImageArticleLayout, { ImageArticleData } from '../components/layout/ImageArticleLayout';
 import VerticalLayout from '../components/layout/VerticalLayout';
-import ShowcaseSquare from '../components/ShowcaseSquare';
 import BannerAd from '../components/BannerAd';
+import { getGhostPosts } from '../lib/GetGhost';
+import { PostsOrPages } from '@tryghost/content-api';
 
 export default function Home(props: {
     oneTwoOneData: OneTwoOneData;
     twoOneData: TwoOneData;
-    crosswordGridData: ArticleGridData;
+    crosswordData: PostsOrPages;
     sportsImageArticleData: ImageArticleData;
     artsImageArticleData: ImageArticleData;
 }) {
@@ -49,7 +49,6 @@ export default function Home(props: {
                     description="Click to learn about advertising with The Amherst Student."
                     url={process.env.GHOST_URL + '/advertise'}
                 />
-                <ArticleGridLayout {...props.crosswordGridData} />
                 <ImageArticleLayout {...props.sportsImageArticleData} />
             </VerticalLayout>
         </div>
@@ -61,13 +60,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const twoOneData = await getTwoOneData('news', 'opinion');
 
-    const sportsImageArticleData = await getImageArticleData('sports', 6);
+    const sportsImageArticleData = await getImageArticleData('sports', 8);
 
-    const artsImageArticleData = await getImageArticleData('arts-and-living', 3);
+    const artsImageArticleData = await getImageArticleData('arts-and-living', 4);
 
-    const crosswordGridData = await getArticleGridData('crossword', 4);
+    const crosswordData = await getGhostPosts({ limit: 1, filter: 'tag:crossword', include: 'authors' });
 
-    if (!oneTwoOneData || !twoOneData || !sportsImageArticleData || !crosswordGridData || !artsImageArticleData) {
+    if (!oneTwoOneData || !twoOneData || !sportsImageArticleData || !crosswordData || !artsImageArticleData) {
         return {
             notFound: true,
         };
@@ -77,7 +76,7 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
             oneTwoOneData,
             twoOneData,
-            crosswordGridData,
+            crosswordData,
             sportsImageArticleData,
             artsImageArticleData,
         },

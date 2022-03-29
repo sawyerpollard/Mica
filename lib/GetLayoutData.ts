@@ -11,7 +11,7 @@ export async function getOneTwoOneData(
     rightTag: string
 ): Promise<OneTwoOneData | undefined> {
     const leftArticles = await getGhostPosts({
-        limit: 3,
+        limit: 5,
         filter: `tag:${leftTag}+tag:-${featuredTag}`,
         include: 'authors',
     });
