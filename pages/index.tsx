@@ -51,18 +51,6 @@ export default function Home(props: {
                 />
                 <ArticleGridLayout {...props.crosswordGridData} />
                 <ImageArticleLayout {...props.sportsImageArticleData} />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    <ShowcaseSquare
-                        heading="New podcasts out now!"
-                        buttonText="Listen Now"
-                        buttonUrl={process.env.GHOST_URL + '/section/podcast'}
-                    />
-                    <ShowcaseSquare
-                        heading="Play today's crossword!"
-                        buttonText="Solve Now"
-                        buttonUrl={process.env.GHOST_URL + '/section/crossword'}
-                    />
-                </div>
             </VerticalLayout>
         </div>
     );
