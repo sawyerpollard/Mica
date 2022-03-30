@@ -41,7 +41,9 @@ export default function Home(props: {
                 <title>The Amherst Student</title>
             </Head>
             <VerticalLayout>
-                <OneTwoOneArticleLayout {...props.oneTwoOneData} />
+                <OneTwoOneArticleLayout {...props.oneTwoOneData}>
+                    <a href={props.crosswordData[0].url} className="whitespace-nowrap mt-6 block text-center scale-90 hover:scale-100 transition bg-mammoth-800/90 hover:bg-mammoth-800 text-lg text-white uppercase font-bold p-4 rounded">Play the Crossword</a>
+                </OneTwoOneArticleLayout>
                 <TwoOneArticleLayout {...props.twoOneData} />
                 <ImageArticleLayout {...props.artsImageArticleData} />
                 <BannerAd
