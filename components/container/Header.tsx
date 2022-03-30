@@ -14,7 +14,7 @@ export default function Header() {
                 <section className="flex md:justify-around">
                     <div className="hidden lg:flex items-center justify-center">
                         <p className="hidden uppercase font-bold md:inline">
-                            {issueString(151, 15)}
+                            {issueString(151, 21)}
                         </p>
                     </div>
                     <div className="hidden md:flex flex-col items-center my-6">
