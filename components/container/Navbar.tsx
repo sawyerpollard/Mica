@@ -6,7 +6,7 @@ import MenuLinks from '../../lib/MenuLinks';
 export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
     const items = navbarLinks.map((navbarLink) => <NavLink key={navbarLink.url} navbarLink={navbarLink} />);
     return (
-        <nav className="w-full backdrop-blur-sm text-white bg-mammoth-800/90 whitespace-nowrap h-12 px-4">
+        <nav className="w-full backdrop-blur-sm text-white bg-mammoth-800/95 whitespace-nowrap h-12 px-4">
             <div className="h-full container mx-auto flex justify-between md:justify-around items-center">
                 <NavMenu navbarLinks={MenuLinks} />
                 {items}
