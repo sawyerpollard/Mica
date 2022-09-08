@@ -9,7 +9,7 @@ import InfoLinks from '../../lib/InfoLinks';
 
 export default function Footer() {
     return (
-        <footer className="text-white bg-mammoth-800 whitespace-nowrap">
+        <footer id="footer" className="text-white bg-mammoth-800 whitespace-nowrap">
             <section className="grid gap-x-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                 <div className="flex flex-col justify-center gap-y-4 p-6 items-center row-span-3 overflow-hidden bg-black/20">
                     <p className="text-2xl font-logo">The Amherst Student</p>
