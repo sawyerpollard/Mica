@@ -26,7 +26,7 @@ export default function NavMenu({ navbarLinks }: { navbarLinks: MenuLink[] }) {
                 </div>
             </button>
             <div
-                className={`w-full p-4 sm:w-96 overflow-scroll overscroll-contain bg-mammoth-800 text-white shadow-md absolute mt-12 pb-12 top-0 bottom-0 left-0 h-screen z-40 transition ${
+                className={`w-full p-4 sm:w-96 overflow-scroll overscroll-contain bg-black/80 text-white shadow-md absolute mt-12 pb-12 top-0 bottom-0 left-0 h-screen z-40 transition ${
                     isOpen ? '' : '-translate-x-full'
                 }`}
             >

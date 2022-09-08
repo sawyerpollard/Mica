@@ -10,16 +10,16 @@ export default function Header() {
             <div className="sticky z-50 top-0">
                 <Navbar navbarLinks={NavbarLinks} />
             </div>
-            <header className="bg-white/90 text-mammoth-800 backdrop-blur-sm sticky top-0 md:top-auto md:block md:border-b-4 border-mammoth-700 z-40 shadow-md whitespace-nowrap">
+            <header className="bg-white/90 backdrop-blur-sm sticky top-0 md:top-auto md:block md:border-b-4 border-black/90 z-40 shadow-md whitespace-nowrap">
                 <section className="flex md:justify-around">
                     <div className="hidden lg:flex items-center justify-center">
                         <p className="hidden uppercase font-bold md:inline">
-                            {issueString(151, 21)}
+                            {issueString(152, 1)}
                         </p>
                     </div>
                     <div className="hidden md:flex flex-col items-center my-6">
                         <a href={process.env.GHOST_URL}>
-                            <h1 className="text-3xl px-4 md:text-7xl whitespace-nowrap font-logo">
+                            <h1 className="text-3xl px-4 md:text-6xl whitespace-nowrap font-logo italic">
                                 The Amherst Student
                             </h1>
                         </a>

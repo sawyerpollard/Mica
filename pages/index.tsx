@@ -21,9 +21,6 @@ export default function Home(props: {
     return (
         <div className="mx-auto container px-4 overflow-">
             <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-                <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 
                 <meta property="og:site_name" content="The Amherst Student" />
@@ -42,7 +39,7 @@ export default function Home(props: {
             </Head>
             <VerticalLayout>
                 <OneTwoOneArticleLayout {...props.oneTwoOneData}>
-                    <a href={props.crosswordData[0].url} className="whitespace-nowrap mt-6 block text-center scale-90 hover:scale-100 transition bg-mammoth-800/90 hover:bg-mammoth-800 text-lg text-white uppercase font-bold p-4 rounded">Play the Crossword</a>
+                    <a href={props.crosswordData[0].url} className="whitespace-nowrap mt-6 block text-center scale-90 hover:scale-100 transition bg-mammoth-900 hover:bg-mammoth-900/90 text-lg text-white uppercase font-bold p-4 rounded">Play the Crossword</a>
                 </OneTwoOneArticleLayout>
                 <TwoOneArticleLayout {...props.twoOneData} />
                 <ImageArticleLayout {...props.artsImageArticleData} />
