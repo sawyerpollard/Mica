@@ -18,14 +18,14 @@ export default [
                 url: process.env.GHOST_URL + '/section/college',
             },
             {
-                name: 'Features',
-                url: process.env.GHOST_URL + '/section/features',
-            },
-            {
                 name: 'Town',
                 url: process.env.GHOST_URL + '/section/town',
             },
         ],
+    },
+    {
+        name: 'Features',
+        url: process.env.GHOST_URL + '/section/features',
     },
     {
         name: 'Opinion',

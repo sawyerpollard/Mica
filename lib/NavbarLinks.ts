@@ -18,14 +18,14 @@ export default [
                 url: process.env.GHOST_URL + '/section/college',
             },
             {
-                name: 'Features',
-                url: process.env.GHOST_URL + '/section/features',
-            },
-            {
                 name: 'Town',
                 url: process.env.GHOST_URL + '/section/town',
             },
         ],
+    },
+    {
+        name: 'Features',
+        url: process.env.GHOST_URL + '/section/features',
     },
     {
         name: 'Opinion',
@@ -104,24 +104,6 @@ export default [
             {
                 name: 'Terras Irradient',
                 url: process.env.GHOST_URL + '/section/terras-irradient',
-            },
-        ],
-    },
-    {
-        name: 'Amusements',
-        url: process.env.GHOST_URL + '/amusements',
-        subLinks: [
-            {
-                name: 'Crossword',
-                url: process.env.GHOST_URL + '/section/crossword',
-            },
-            {
-                name: 'Cartoons',
-                url: process.env.GHOST_URL + '/section/cartoon',
-            },
-            {
-                name: 'Satire',
-                url: process.env.GHOST_URL + '/section/satire',
             },
         ],
     },
