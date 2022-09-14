@@ -19,7 +19,7 @@ export default function Header() {
                     </div>
                     <div className="hidden md:flex flex-col items-center my-6">
                         <a href={process.env.GHOST_URL}>
-                            <h1 className="text-3xl px-4 md:text-6xl whitespace-nowrap font-logo italic">
+                            <h1 className="text-3xl px-4 md:text-6xl whitespace-nowrap font-logo">
                                 The Amherst Student
                             </h1>
                         </a>

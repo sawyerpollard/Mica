@@ -12,7 +12,7 @@ export default function Footer() {
         <footer id="footer" className="text-white bg-mammoth-900 whitespace-nowrap">
             <section className="grid gap-x-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                 <div className="flex flex-col justify-center gap-y-4 p-6 items-center row-span-3 overflow-hidden bg-black/40">
-                    <p className="text-2xl font-logo italic">The Amherst Student</p>
+                    <p className="text-2xl font-logo">The Amherst Student</p>
                     <p className="font-serif">Established 1868</p>
                     <SocialIcons urls={SocialLinks} />
                     <DonateButton url={process.env.GHOST_URL + '/donate'} />

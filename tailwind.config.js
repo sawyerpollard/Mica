@@ -3,7 +3,7 @@ module.exports = {
     theme: {
         fontFamily: {
             serif: ['EB Garamond', 'serif'],
-            logo: ['Old Standard TT', 'serif'],
+            logo: ['old-english-text-mt-regular', 'serif'],
             sans: ['Karla', 'sans']
         },
         extend: {

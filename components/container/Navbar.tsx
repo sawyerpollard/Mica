@@ -10,7 +10,7 @@ export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
             <div className="h-full container mx-auto flex justify-between md:justify-around items-center">
                 <NavMenu navbarLinks={MenuLinks} />
                 {items}
-                <h1 className="text-3xl md:hidden whitespace-nowrap font-logo italic">
+                <h1 className="text-3xl md:hidden whitespace-nowrap font-logo">
                     The Amherst Student
                 </h1>
             </div>
