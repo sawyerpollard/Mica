@@ -19,7 +19,7 @@ export default function Home(props: {
     artsImageArticleData: ImageArticleData;
 }) {
     return (
-        <div className="mx-auto container px-4 overflow-">
+        <div className="mx-auto container px-4 overflow-x-hidden">
             <Head>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 

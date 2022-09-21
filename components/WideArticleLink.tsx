@@ -13,7 +13,7 @@ export default function WideArticleLink({
 }) {
     return (
         <a
-            className="flex flex-row justify-between gap-x-6 text-black hover:text-black/60 transition duration-500"
+            className="flex flex-col-reverse sm:flex-row justify-between gap-6 text-black hover:text-black/60 transition duration-500"
             href={article.url}
         >
             <div>

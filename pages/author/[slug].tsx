@@ -14,10 +14,10 @@ export default function AuthorPage(props: {
     const lastArticle = props.articles[0];
 
     return (
-        <div className="mx-auto container max-w-screen-lg p-8 flex flex-col gap-16">
+        <div className="mx-auto container overflow-x-hidden max-w-screen-lg p-8 flex flex-col gap-16">
             <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-4">
-                    <h1 className="font-serif text-5xl lg:text-6xl font-extrabold whitespace-nowrap">{props.author.name}</h1>
+                    <h1 className="font-serif text-4xl sm:text-6xl font-extrabold whitespace-nowrap">{props.author.name}</h1>
                     {props.author.bio && <p className="max-w-prose">{props.author.bio}</p>}
                 </div>
                 <div className="hidden lg:flex flex-col gap-2 whitespace-nowrap text-sm text-right">
