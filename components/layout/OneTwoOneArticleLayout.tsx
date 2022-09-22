@@ -1,18 +1,18 @@
-import { PostsOrPages, PostOrPage } from '@tryghost/content-api';
+import { PostOrPage } from '@tryghost/content-api';
 
 import FeaturedArticle from '../FeaturedArticle';
 import ArticleList from '../ArticleList';
 
 export type OneTwoOneData = {
-    leftArticles: PostsOrPages;
+    leftArticles: PostOrPage[];
     featuredArticle: PostOrPage;
-    rightArticles: PostsOrPages;
+    rightArticles: PostOrPage[];
 };
 
 export type OneTwoOneArticleLayoutProps = {
-    leftArticles: PostsOrPages;
-    featuredArticle: PostOrPage;
-    rightArticles: PostsOrPages;
+    leftArticles: PostOrPage[];
+    featuredArticle: PostOrPage | PostOrPage[];
+    rightArticles: PostOrPage[];
     children: React.ReactNode;
 };
 

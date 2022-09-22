@@ -1,22 +1,17 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { getOneTwoOneData, getTwoOneData, getImageArticleData } from '../lib/GetLayoutData';
+import Sourcer, { Source } from '../lib/Sourcer';
 
-import OneTwoOneArticleLayout, { OneTwoOneData } from '../components/layout/OneTwoOneArticleLayout';
-import TwoOneArticleLayout, { TwoOneData } from '../components/layout/TwoOneArticleLayout';
-import ImageArticleLayout, { ImageArticleData } from '../components/layout/ImageArticleLayout';
+import OneTwoOneArticleLayout from '../components/layout/OneTwoOneArticleLayout';
+import TwoOneArticleLayout from '../components/layout/TwoOneArticleLayout';
+import ImageArticleLayout from '../components/layout/ImageArticleLayout';
 import VerticalLayout from '../components/layout/VerticalLayout';
 import BannerAd from '../components/BannerAd';
-import { getGhostPosts } from '../lib/GetGhost';
-import { PostsOrPages } from '@tryghost/content-api';
+import FeaturedCartoon from '../components/FeaturedCartoon';
 
 export default function Home(props: {
-    oneTwoOneData: OneTwoOneData;
-    twoOneData: TwoOneData;
-    crosswordData: PostsOrPages;
-    sportsImageArticleData: ImageArticleData;
-    artsImageArticleData: ImageArticleData;
+    sources: Source[]
 }) {
     return (
         <div className="mx-auto container px-4 overflow-x-hidden">
@@ -38,46 +33,45 @@ export default function Home(props: {
                 <title>The Amherst Student</title>
             </Head>
             <VerticalLayout>
-                <OneTwoOneArticleLayout {...props.oneTwoOneData}>
-                    <a href={props.crosswordData[0].url} className="whitespace-nowrap mt-6 block text-center scale-90 hover:scale-100 transition bg-mammoth-900 hover:bg-mammoth-900/90 text-lg text-white uppercase font-bold p-4 rounded">Play the Crossword</a>
+                <OneTwoOneArticleLayout leftArticles={props.sources[0]} featuredArticle={props.sources[1]} rightArticles={props.sources[2]}>
+                    <a href={props.sources[3][0].url} className="whitespace-nowrap mt-6 block text-center scale-90 hover:scale-100 transition bg-mammoth-900 hover:bg-mammoth-900/90 text-lg text-white uppercase font-bold p-4 rounded">Play the Crossword</a>
                 </OneTwoOneArticleLayout>
-                <TwoOneArticleLayout {...props.twoOneData} />
-                <ImageArticleLayout {...props.artsImageArticleData} />
+
+                <TwoOneArticleLayout leftHeading="Top News" rightHeading="Opinion" leftArticles={props.sources[4]} rightArticles={props.sources[5]} />
+
+                <ImageArticleLayout heading="Arts & Living" articles={props.sources[6]} />
+
                 <BannerAd
                     heading="Your ad here!"
                     description="Click to learn about advertising with The Amherst Student."
                     url={process.env.GHOST_URL + '/advertise'}
                 />
-                <ImageArticleLayout {...props.sportsImageArticleData} />
+
+                <ImageArticleLayout heading="The Week in Sports" articles={props.sources[7]} />
+
+                <FeaturedCartoon article={props.sources[8]} />
             </VerticalLayout>
         </div>
     );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const oneTwoOneData = await getOneTwoOneData('hash-top-left', 'hash-top-center', 'hash-top-right');
-
-    const twoOneData = await getTwoOneData('news', 'opinion');
-
-    const sportsImageArticleData = await getImageArticleData('sports', 8);
-
-    const artsImageArticleData = await getImageArticleData('arts-and-living', 4);
-
-    const crosswordData = await getGhostPosts({ limit: 1, filter: 'tag:crossword', include: 'authors' });
-
-    if (!oneTwoOneData || !twoOneData || !sportsImageArticleData || !crosswordData || !artsImageArticleData) {
-        return {
-            notFound: true,
-        };
-    }
+    const sourcer = new Sourcer();
+    const sources = [
+        await sourcer.get('tag:hash-top-left', 5),
+        await sourcer.get('tag:hash-top-center+feature_image:-null', 1),
+        await sourcer.get('tag:hash-top-right', 2),
+        await sourcer.get('tag:crossword', 1),
+        await sourcer.get('tag:news+feature_image:-null', 2),
+        await sourcer.get('tag:opinion', 4),
+        await sourcer.get('tag:arts-and-living+feature_image:-null', 4),
+        await sourcer.get('tag:sports+feature_image:-null', 8),
+        await sourcer.get('tag:cartoon+feature_image:-null', 1),
+    ];
 
     return {
         props: {
-            oneTwoOneData,
-            twoOneData,
-            crosswordData,
-            sportsImageArticleData,
-            artsImageArticleData,
+            sources,
         },
     };
 };

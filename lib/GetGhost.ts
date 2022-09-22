@@ -1,4 +1,4 @@
-import GhostContentAPI, { Params, PostsOrPages, Tag, Author, Authors } from '@tryghost/content-api';
+import GhostContentAPI, { Params, PostOrPage, Tag, Author, PostsOrPages } from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
     url: process.env.GHOST_API_URL as string,
@@ -6,19 +6,24 @@ const api = new GhostContentAPI({
     version: 'v3',
 });
 
-export async function getGhostPosts(options?: Params): Promise<void | PostsOrPages> {
-    try {
-        const posts = await api.posts.browse(options);
-        return posts;
-    } catch (err) {
-        console.error(err);
-    }
+export async function getGhostPosts(options?: Params): Promise<PostsOrPages> {
+    const posts = await api.posts.browse(options);
+    return posts;
 }
 
 export async function getGhostTag(options?: any): Promise<void | Tag> {
     try {
         const tag = await api.tags.read(options);
         return tag;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+export async function getGhostTags(options?: any): Promise<void | Tag[]> {
+    try {
+        const tags = await api.tags.browse(options);
+        return tags;
     } catch (err) {
         console.error(err);
     }
@@ -33,7 +38,7 @@ export async function getGhostAuthor(options?: any): Promise<void | Author> {
     }
 }
 
-export async function getGhostAuthors(options?: any): Promise<void | Authors> {
+export async function getGhostAuthors(options?: any): Promise<void | Author[]> {
     try {
         const authors = await api.authors.browse(options);
         return authors;

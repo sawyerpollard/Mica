@@ -1,10 +1,12 @@
+import Link from 'next/link';
+
 import { Author } from '@tryghost/content-api';
 
 export default function AuthorLink({ authors }: { authors: Author[] }) {
     const authorLinks = authors.map((author, index) => (
-        <a key={index} href={author.url || '#'} className="text-purple-900 hover:text-black">
-            {author.name}
-        </a>
+        <span key={index} className="text-purple-900 hover:text-black">
+            <Link href={`/author/${author.slug}`}>{author.name}</Link>
+        </span>
     ));
 
     return (

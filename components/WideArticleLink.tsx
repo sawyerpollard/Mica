@@ -19,7 +19,7 @@ export default function WideArticleLink({
             <div>
                 <h2 className="font-serif text-2xl font-medium">{article.title}</h2>
                 <ArticleInfo article={article} showDate={showDate} />
-                <p className="mt-4 font-serif text-lg hidden lg:block">{article.excerpt}</p>
+                <p className="mt-4 font-serif text-lg hidden sm:block">{article.excerpt}</p>
             </div>
             {showImage && article.feature_image && (
                 <img className="h-52 aspect-square object-cover" src={article.feature_image} />

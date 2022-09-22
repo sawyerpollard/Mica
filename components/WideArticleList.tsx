@@ -1,4 +1,4 @@
-import { PostsOrPages } from '@tryghost/content-api';
+import { PostOrPage } from '@tryghost/content-api';
 
 import WideArticleLink from './WideArticleLink';
 
@@ -7,7 +7,7 @@ export default function WideArticleList({
     showImages,
     showDate,
 }: {
-    articles: PostsOrPages;
+    articles: PostOrPage[];
     showImages?: boolean;
     showDate?: boolean;
 }) {

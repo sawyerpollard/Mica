@@ -1,4 +1,4 @@
-import { PostsOrPages } from '@tryghost/content-api';
+import { PostOrPage } from '@tryghost/content-api';
 
 import ArticleLink from './ArticleLink';
 
@@ -8,7 +8,7 @@ export default function ArticleList({
     showDate,
     showInfo
 }: {
-    articles: PostsOrPages;
+    articles: PostOrPage[];
     showImages?: boolean;
     showDate?: boolean;
     showInfo?: boolean;

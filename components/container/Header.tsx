@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import NavbarLinks from '../../lib/NavbarLinks';
 
 import { OpenWeatherInfo } from '../OpenWeatherInfo';
@@ -18,11 +20,9 @@ export default function Header() {
                         </p>
                     </div>
                     <div className="hidden md:flex flex-col items-center my-6">
-                        <a href={process.env.GHOST_URL}>
-                            <h1 className="text-3xl px-4 md:text-6xl whitespace-nowrap font-logo">
-                                The Amherst Student
-                            </h1>
-                        </a>
+                        <h1 className="text-3xl px-4 md:text-6xl whitespace-nowrap font-logo">
+                            <Link href="/">The Amherst Student</Link>
+                        </h1>
                         <p className="hidden lg:inline font-serif font-medium italic">The Newspaper of Amherst College Since 1868</p>
                     </div>
                     <div className="hidden lg:flex flex-col items-center justify-center font-medium">

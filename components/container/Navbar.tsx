@@ -1,6 +1,9 @@
+import Link from 'next/link';
+
 import NavMenu from './NavMenu';
 
 import { NavbarLink } from '../../lib/NavbarLinks';
+
 import MenuLinks from '../../lib/MenuLinks';
 
 export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
@@ -11,7 +14,7 @@ export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
                 <NavMenu navbarLinks={MenuLinks} />
                 {items}
                 <h1 className="text-3xl md:hidden whitespace-nowrap font-logo">
-                    The Amherst Student
+                    <Link href="/">The Amherst Student</Link>
                 </h1>
             </div>
         </nav>

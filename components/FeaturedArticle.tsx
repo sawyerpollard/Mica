@@ -2,7 +2,8 @@ import { PostOrPage } from '@tryghost/content-api';
 
 import { ArticleInfo } from './ArticleInfo';
 
-export default function FeaturedArticle({ article }: { article: PostOrPage }) {
+export default function FeaturedArticle({ article }: { article: PostOrPage | PostOrPage[] }) {
+    if (Array.isArray(article)) article = article[0];
     return (
         <a href={article.url} className="text-center text-black hover:text-black/60 transition duration-500">
             {article.feature_image && <img className="mb-4 aspect-video object-cover w-full" src={article.feature_image} />}
