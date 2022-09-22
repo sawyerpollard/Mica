@@ -23,11 +23,10 @@ export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
 
 function NavLink({ navbarLink }: { navbarLink: NavbarLink }) {
     return (
-            <a
+            <span
                 className="hidden md:flex items-center justify-center px-2 lg:px-6 h-full transition text-sm hover:text-white/80"
-                href={navbarLink.url}
             >
-                {navbarLink.name}
-            </a>
+                <Link href={navbarLink.url}>{navbarLink.name}</Link>
+            </span>
     );
 }

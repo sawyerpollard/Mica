@@ -32,8 +32,6 @@ export default class Sourcer {
             page++;
         }
 
-        if (results.length != limit) throw new Error('Sourcer: Error!')
-
         return results;
     }
 }

@@ -44,7 +44,7 @@ export default function Home(props: {
                 <BannerAd
                     heading="Your ad here!"
                     description="Click to learn about advertising with The Amherst Student."
-                    url={process.env.GHOST_URL + '/advertise'}
+                    url={'/advertise'}
                 />
 
                 <ImageArticleLayout heading="The Week in Sports" articles={props.sources[7]} />
