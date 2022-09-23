@@ -1,4 +1,4 @@
-import GhostContentAPI, { Params, PostOrPage, Tag, Author, PostsOrPages } from '@tryghost/content-api';
+import GhostContentAPI, { Params, Tag, Author, PostsOrPages } from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
     url: process.env.GHOST_API_URL as string,

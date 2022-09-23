@@ -1,5 +1,7 @@
 import { PostOrPage } from '@tryghost/content-api';
 
+import { optimizeGhostImageUrl } from '../lib/GhostTools';
+
 import { ArticleInfo } from './ArticleInfo';
 
 export default function WideArticleLink({
@@ -22,7 +24,7 @@ export default function WideArticleLink({
                 <p className="mt-4 font-serif text-lg hidden sm:block">{article.excerpt}</p>
             </div>
             {showImage && article.feature_image && (
-                <img className="h-52 aspect-square object-cover" src={article.feature_image} />
+                <img className="h-52 aspect-square object-cover" src={optimizeGhostImageUrl(article.feature_image, 'w720')} />
             )}
         </a>
     );
