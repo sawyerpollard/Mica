@@ -3,7 +3,7 @@ import GhostContentAPI, { Params, Tag, Author, PostsOrPages } from '@tryghost/co
 const api = new GhostContentAPI({
     url: process.env.GHOST_API_URL as string,
     key: process.env.GHOST_CONTENT_API_KEY as string,
-    version: 'v3',
+    version: 'v5.0',
 });
 
 export async function getGhostPosts(options?: Params): Promise<PostsOrPages> {

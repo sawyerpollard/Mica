@@ -1,14 +1,15 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
+import Config from '../lib/Config';
 import Sourcer, { Source } from '../lib/Sourcer';
 
 import OneTwoOneArticleLayout from '../components/layout/OneTwoOneArticleLayout';
 import TwoOneArticleLayout from '../components/layout/TwoOneArticleLayout';
 import ImageArticleLayout from '../components/layout/ImageArticleLayout';
 import VerticalLayout from '../components/layout/VerticalLayout';
-import BannerAd from '../components/BannerAd';
-import FeaturedCartoon from '../components/FeaturedCartoon';
+import BannerAd from '../components/info/BannerAd';
+import FeaturedCartoon from '../components/article/FeaturedCartoon';
 
 export default function Home(props: {
     sources: Source[]
@@ -18,19 +19,19 @@ export default function Home(props: {
             <Head>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 
-                <meta property="og:site_name" content="The Amherst Student" />
+                <meta property="og:site_name" content={Config.meta.title} />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="The Amherst Student" />
-                <meta property="og:description" content="Founded in 1868, the Student remains the source for all news Amherst." />
-                <meta property="og:url" content="https://amherststudent.com/" />
+                <meta property="og:title" content={Config.meta.title} />
+                <meta property="og:description" content={Config.meta.description} />
+                <meta property="og:url" content={Config.meta.url} />
 
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="The Amherst Student" />
-                <meta name="twitter:description" content="Founded in 1868, the Student remains the source for all news Amherst." />
-                <meta name="twitter:url" content="https://amherststudent.com/" />
+                <meta name="twitter:title" content={Config.meta.title} />
+                <meta name="twitter:description" content={Config.meta.description} />
+                <meta name="twitter:url" content={Config.meta.url} />
 
-                <meta name="description" content="Founded in 1868, the Student remains the source for all news Amherst." />
-                <title>The Amherst Student</title>
+                <meta name="description" content={Config.meta.description} />
+                <title>{Config.meta.title}</title>
             </Head>
             <VerticalLayout>
                 <OneTwoOneArticleLayout leftArticles={props.sources[0]} featuredArticle={props.sources[1]} rightArticles={props.sources[2]}>

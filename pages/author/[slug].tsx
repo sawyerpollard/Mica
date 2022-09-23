@@ -2,9 +2,9 @@ import type { GetStaticProps, GetStaticPaths } from 'next';
 import type { Author, PostOrPage } from '@tryghost/content-api';
 
 import { getGhostAuthor, getGhostAuthors, getGhostPosts } from '../../lib/GetGhost';
-import { naturalDateString } from '../../components/PublishDate';
+import { naturalDateString } from '../../components/article/PublishDate';
 
-import WideArticleList from '../../components/WideArticleList';
+import WideArticleList from '../../components/article/WideArticleList';
 
 export default function AuthorPage(props: {
     author: Author;

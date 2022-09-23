@@ -1,6 +1,6 @@
 import { PostsOrPages } from '@tryghost/content-api';
 
-import ArticleLink from '../ArticleLink';
+import ArticleLink from '../article/ArticleLink';
 
 export type ArticleGridData = {
     articles: PostsOrPages;

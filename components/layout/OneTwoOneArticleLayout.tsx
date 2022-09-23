@@ -1,7 +1,7 @@
 import { PostOrPage } from '@tryghost/content-api';
 
-import FeaturedArticle from '../FeaturedArticle';
-import ArticleList from '../ArticleList';
+import FeaturedArticle from '../article/FeaturedArticle';
+import ArticleList from '../article/ArticleList';
 
 export type OneTwoOneData = {
     leftArticles: PostOrPage[];

@@ -6,9 +6,9 @@ import type { Tag } from '@tryghost/content-api';
 import Sourcer, { Source } from '../../lib/Sourcer';
 import { getGhostTag, getGhostTags } from '../../lib/GetGhost';
 
-import WideArticleList from '../../components/WideArticleList';
+import WideArticleList from '../../components/article/WideArticleList';
 import TwoOneArticleLayout from '../../components/layout/TwoOneArticleLayout';
-import FeaturedArticle from '../../components/FeaturedArticle';
+import FeaturedArticle from '../../components/article/FeaturedArticle';
 
 export default function SectionPage(props: {
     tag: Tag;

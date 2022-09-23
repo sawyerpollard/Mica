@@ -1,20 +1,24 @@
 import Link from 'next/link';
 
+import Config from '../../lib/Config';
+
 import NavMenu from './NavMenu';
 
-import { NavbarLink } from '../../lib/NavbarLinks';
-
-import MenuLinks from '../../lib/MenuLinks';
+type NavbarLink = {
+    name: string;
+    url: string;
+    subLinks?: NavbarLink[];
+};
 
 export default function Navbar({ navbarLinks }: { navbarLinks: NavbarLink[] }) {
     const items = navbarLinks.map((navbarLink) => <NavLink key={navbarLink.url} navbarLink={navbarLink} />);
     return (
         <nav className="w-full backdrop-blur-sm text-white bg-black/90 whitespace-nowrap h-12 px-4">
             <div className="h-full container mx-auto flex justify-between md:justify-around items-center">
-                <NavMenu navbarLinks={MenuLinks} />
+                <NavMenu navbarLinks={Config.menuLinks} />
                 {items}
                 <h1 className="text-3xl md:hidden whitespace-nowrap font-logo">
-                    <Link href="/">The Amherst Student</Link>
+                    <Link href="/">{Config.meta.title}</Link>
                 </h1>
             </div>
         </nav>

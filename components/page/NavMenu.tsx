@@ -1,8 +1,14 @@
 import { useState } from 'react';
 
-import { MenuLink } from '../../lib/MenuLinks';
-import InfoLinks from '../../lib/InfoLinks';
-import InfoLinkBox from '../InfoLinkBox';
+import Config from '../../lib/Config';
+
+import InfoLinkBox from '../info/InfoLinkBox';
+
+type MenuLink = {
+    name: string;
+    url: string;
+    subLinks?: MenuLink[];
+};
 
 export default function NavMenu({ navbarLinks }: { navbarLinks: MenuLink[] }) {
     const [isOpen, setOpen] = useState(false);
@@ -32,7 +38,7 @@ export default function NavMenu({ navbarLinks }: { navbarLinks: MenuLink[] }) {
             >
                 <div className="flex flex-col justify-between gap-y-10">
                     <div className="flex flex-col gap-y-6">{items}</div>
-                    <InfoLinkBox links={[...InfoLinks.primary, ...InfoLinks.secondary]} />
+                    <InfoLinkBox links={[...Config.infoLinks.primary, ...Config.infoLinks.secondary]} />
                 </div>
             </div>
         </>

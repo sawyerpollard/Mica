@@ -1,6 +1,6 @@
 import { PostOrPage } from '@tryghost/content-api';
 
-import { optimizeGhostImageUrl } from '../lib/GhostTools';
+import { optimizeGhostImageUrl } from '../../lib/GhostTools';
 
 export default function FeaturedCartoon({ article }: { article: PostOrPage | PostOrPage[] }) {
     if (Array.isArray(article)) article = article[0];

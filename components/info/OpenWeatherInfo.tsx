@@ -17,7 +17,7 @@ export function OpenWeatherInfo({ cityId }: { cityId: number }) {
                 console.error(err);
             }
         })();
-    }, []);
+    });
 
     if (response?.weather) {
         const iconUrl = getIconUrl(response.weather[0].icon);

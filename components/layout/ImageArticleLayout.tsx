@@ -1,6 +1,6 @@
 import { PostOrPage } from '@tryghost/content-api';
 
-import ArticleLink from '../ArticleLink';
+import ArticleLink from '../article/ArticleLink';
 
 export type ImageArticleData = {
     articles: PostOrPage[];

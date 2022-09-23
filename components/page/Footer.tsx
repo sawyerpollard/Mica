@@ -1,38 +1,36 @@
+import Config from '../../lib/Config';
+
 import { SocialIcon } from 'react-social-icons';
 
-import InfoLinkBox from '../InfoLinkBox';
-import DonateButton from '../DonateButton';
-
-import CategoryLinks from '../../lib/FooterLinks';
-import SocialLinks from '../../lib/SocialLinks';
-import InfoLinks from '../../lib/InfoLinks';
+import InfoLinkBox from '../info/InfoLinkBox';
+import DonateButton from '../info/DonateButton';
 
 export default function Footer() {
     return (
         <footer id="footer" className="text-white bg-mammoth-900 whitespace-nowrap">
             <section className="grid gap-x-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                 <div className="flex flex-col justify-center gap-y-4 p-6 items-center row-span-3 overflow-hidden bg-black/40">
-                    <p className="text-2xl font-logo">The Amherst Student</p>
+                    <p className="text-2xl font-logo">{Config.meta.title}</p>
                     <p className="font-serif">Established 1868</p>
-                    <SocialIcons urls={SocialLinks} />
-                    <DonateButton url={process.env.GHOST_URL + '/donate'} />
+                    <SocialIcons urls={Config.socialLinks} />
+                    <DonateButton url="/donate" />
                     <a
                         className="mb-8 font-serif font-light text-blue-300 hover:text-blue-300/80 transition"
-                        href="mailto:astudent@amherst.edu"
+                        href={`mailto:${Config.meta.email}`}
                     >
-                        astudent@amherst.edu
+                        {Config.meta.email}
                     </a>
-                    <InfoLinkBox links={[...InfoLinks.primary, ...InfoLinks.secondary]} />
+                    <InfoLinkBox links={[...Config.infoLinks.primary, ...Config.infoLinks.secondary]} />
                 </div>
-                <FooterLinkList links={CategoryLinks.news} />
-                <FooterLinkList links={CategoryLinks.opinion} />
-                <FooterLinkList links={CategoryLinks.artsAndLiving} />
-                <FooterLinkList links={CategoryLinks.sports} />
-                <FooterLinkList links={CategoryLinks.podcasts} />
-                <FooterLinkList links={CategoryLinks.amusements} />
+                <FooterLinkList links={Config.footerLinks.news} />
+                <FooterLinkList links={Config.footerLinks.opinion} />
+                <FooterLinkList links={Config.footerLinks.artsAndLiving} />
+                <FooterLinkList links={Config.footerLinks.sports} />
+                <FooterLinkList links={Config.footerLinks.podcasts} />
+                <FooterLinkList links={Config.footerLinks.amusements} />
             </section>
             <p className="text-xs font-serif font-light text-white/60 hidden tracking-wide text-center">
-                © {new Date().getFullYear()} The Amherst Student. All Rights Reserved.
+                © {new Date().getFullYear()} {Config.meta.title}. All Rights Reserved.
             </p>
         </footer>
     );
