@@ -16,7 +16,7 @@ export default function ArticleLink({
     showInfo?: boolean;
 }) {
     return (
-        <div className="text-black hover:text-black/60 transition duration-500">
+        <div className="text-black hover:text-black/60 transition duration-500 flex flex-col gap-4">
             <a href={article.url}>
                 {showImage && article.feature_image && (
                     <img className="mb-4 aspect-video object-cover w-full" src={optimizeGhostImageUrl(article.feature_image, 'w720')} />

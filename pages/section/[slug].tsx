@@ -6,8 +6,6 @@ import Sourcer, { Source } from '../../lib/Sourcer';
 import { getGhostTag, getGhostTags } from '../../lib/GetGhost';
 
 import WideArticleList from '../../components/article/WideArticleList';
-import TwoOneArticleLayout from '../../components/layout/TwoOneArticleLayout';
-import FeaturedArticle from '../../components/article/FeaturedArticle';
 
 export default function SectionPage(props: {
     tag: Tag;
@@ -23,31 +21,9 @@ export default function SectionPage(props: {
                 {props.tag.name}
             </h1>
             <div className="flex flex-col items-center gap-16">
-                {props.sources[0].length === 1 &&
-                    <div className="max-w-screen-md">
-                        <FeaturedArticle article={props.sources[0]} />
-                    </div>
-                }
-
-                {props.sources[1].length === 2 &&
+                {props.sources[0].length > 0 &&
                     <div className="max-w-screen-lg">
-                        <WideArticleList showImages showDate articles={props.sources[1]} />
-                    </div>
-                }
-
-                {props.sources[2].length === 1 &&
-                    <div className="max-w-screen-md">
-                        <FeaturedArticle article={props.sources[2]} />
-                    </div>
-                }
-
-                {props.sources[3].length === 2 && props.sources[4].length === 4 &&
-                    <TwoOneArticleLayout leftArticles={props.sources[3]} rightArticles={props.sources[4]} />
-                }
-
-                {props.sources[5].length > 0 &&
-                    <div className="max-w-screen-lg">
-                        <WideArticleList showImages showDate articles={props.sources[5]} />
+                        <WideArticleList showImages showDate articles={props.sources[0]} />
                     </div>
                 }
             </div>
@@ -66,12 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const sourcer = new Sourcer();
     const sources = [
-            await sourcer.get(`tag:${tag.slug}+feature_image:-null`, 1),
-            await sourcer.get(`tag:${tag.slug}+feature_image:-null`, 2),
-            await sourcer.get(`tag:${tag.slug}+feature_image:-null`, 1),
-            await sourcer.get(`tag:${tag.slug}+feature_image:-null`, 2),
-            await sourcer.get(`tag:${tag.slug}`, 4),
-            await sourcer.get(`tag:${tag.slug}`, 40),
+            await sourcer.get(`tag:${tag.slug}`, 100),
     ];
 
     return {
