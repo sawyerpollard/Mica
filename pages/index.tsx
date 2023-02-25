@@ -43,8 +43,8 @@ export default function Home(props: {
                 <ImageArticleLayout heading="Arts & Living" articles={props.sources[6]} />
 
                 <BannerAd
-                    url={'https://www.amherst.edu/news/events/presidential-scholars'}
-                    imageUrl={'https://amherststudent.com/content/images/size/w1600/2022/10/ad-2.jpg'}
+                    url={'https://amherst.edu/go/litfest'}
+                    imageUrl={'https://amherststudent.com/content/images/size/w1600/2023/02/LitFest-2023_Student-Ad_Web-1.png'}
                 />
 
                 <ImageArticleLayout heading="The Week in Sports" articles={props.sources[7]} />
